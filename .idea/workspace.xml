@@ -5,44 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1caeafa2-abb8-4947-852a-0ad6435d67de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.flattened-pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lombok.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ErrorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ErrorsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ExceptionHandlerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/PicturesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/AlbumBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/AlbumDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/PhotoBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/PhotoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/mappers/AlbumApplicationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/mappers/PhotoApplicationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/generic/GenericMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/AlbumInfrastructureMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PhotoInfrastructureMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PictureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PictureServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/album/Album.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/album/AlbumRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/dto/AlbumResponseBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/dto/PhotoResponseBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/exception/BusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/exception/ClientServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/generic/GenericEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/photos/Photo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/photos/PhotoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/pictures/PictureClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/pictures/PictureClientServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-local.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/inditex/java/spring/application/PicturesControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ErrorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/generic/ErrorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ErrorsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/generic/ErrorsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/generic/ExceptionHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/PicturesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/PicturesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/AlbumBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/dto/AlbumBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/AlbumDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/dto/AlbumDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/PhotoBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/dto/PhotoBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/PhotoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/dto/PhotoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/mappers/AlbumApplicationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/mappers/AlbumApplicationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/mappers/PhotoApplicationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/mappers/PhotoApplicationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/AlbumInfrastructureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/AlbumInfrastructureMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PhotoInfrastructureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PhotoInfrastructureMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/inditex/java/spring/application/PicturesControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/inditex/java/spring/application/PicturesControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,11 +84,8 @@
       <recent name="com.inditex.java.spring.application.pictures" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PicturesControllerTest.getPhotoById">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
-      <envs>
-        <env name="spring.profiles.active" value="local" />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="com.inditex.java.spring.Application" />
       <module name="pictures-manager" />
       <extension name="coverage">
@@ -221,17 +195,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/PicturesController.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PictureServiceImpl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ExceptionHandlerController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/generic/ExceptionHandlerController.java</url>
           <line>46</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>

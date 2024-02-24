@@ -1,8 +1,8 @@
 package com.inditex.java.spring.application;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.inditex.java.spring.application.pictures.dto.AlbumBase;
-import com.inditex.java.spring.application.pictures.dto.PhotoDTO;
+import com.inditex.java.spring.application.dto.AlbumBase;
+import com.inditex.java.spring.application.dto.PhotoDTO;
 import com.inditex.java.spring.infrastructure.dto.AlbumResponseBody;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

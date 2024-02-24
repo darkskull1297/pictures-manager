@@ -1,4 +1,4 @@
-package com.inditex.java.spring.application.pictures;
+package com.inditex.java.spring.application.generic;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

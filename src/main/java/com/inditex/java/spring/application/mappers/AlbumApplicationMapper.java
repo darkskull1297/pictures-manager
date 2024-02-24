@@ -1,7 +1,7 @@
-package com.inditex.java.spring.application.pictures.mappers;
+package com.inditex.java.spring.application.mappers;
 
 
-import com.inditex.java.spring.application.pictures.dto.AlbumDTO;
+import com.inditex.java.spring.application.dto.AlbumDTO;
 import com.inditex.java.spring.domain.generic.GenericMapper;
 import com.inditex.java.spring.infrastructure.album.Album;
 import org.mapstruct.Mapper;

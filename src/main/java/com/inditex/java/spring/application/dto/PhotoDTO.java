@@ -1,4 +1,4 @@
-package com.inditex.java.spring.application.pictures.dto;
+package com.inditex.java.spring.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

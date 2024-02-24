@@ -1,4 +1,4 @@
-package com.inditex.java.spring.application.pictures;
+package com.inditex.java.spring.application.generic;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;

@@ -9,10 +9,11 @@ import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, unmappedSourcePolicy = ReportingPolicy.IGNORE, unmappedTargetPolicy =
-        ReportingPolicy.IGNORE, uses = {AlbumInfrastructureMapper.class})
+        ReportingPolicy.IGNORE, uses = {AlbumInfrastructureMapper.class, AlbumRepository.class})
 public abstract class PhotoInfrastructureMapper implements GenericMapper<Photo, PhotoResponseBody> {
     @Autowired
     private AlbumRepository albumRepository;
+
 
     @Mapping(target = "albumId", source = "albumId.id")
     @Mapping(target = "id", source = "id")

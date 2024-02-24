@@ -1,7 +1,5 @@
-package com.inditex.java.spring.application.pictures;
+package com.inditex.java.spring.application.generic;
 
-import com.inditex.java.spring.infrastructure.exception.BusinessException;
-import com.inditex.java.spring.infrastructure.exception.ClientServiceException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolation;

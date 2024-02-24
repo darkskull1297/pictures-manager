@@ -1,9 +1,9 @@
 package com.inditex.java.spring.application.pictures;
 
-import com.inditex.java.spring.application.pictures.dto.AlbumDTO;
-import com.inditex.java.spring.application.pictures.dto.PhotoDTO;
-import com.inditex.java.spring.application.pictures.mappers.AlbumApplicationMapper;
-import com.inditex.java.spring.application.pictures.mappers.PhotoApplicationMapper;
+import com.inditex.java.spring.application.dto.AlbumDTO;
+import com.inditex.java.spring.application.dto.PhotoDTO;
+import com.inditex.java.spring.application.mappers.AlbumApplicationMapper;
+import com.inditex.java.spring.application.mappers.PhotoApplicationMapper;
 import com.inditex.java.spring.domain.pictures.PictureService;
 import com.inditex.java.spring.infrastructure.dto.AlbumResponseBody;
 import jakarta.transaction.Transactional;
