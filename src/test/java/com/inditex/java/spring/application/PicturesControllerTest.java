@@ -3,7 +3,11 @@ package com.inditex.java.spring.application;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.inditex.java.spring.application.dto.AlbumBase;
 import com.inditex.java.spring.application.dto.PhotoDTO;
+import com.inditex.java.spring.domain.pictures.PictureService;
+import com.inditex.java.spring.infrastructure.album.Album;
 import com.inditex.java.spring.infrastructure.dto.AlbumResponseBody;
+import com.inditex.java.spring.infrastructure.pictures.PictureClientService;
+import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +24,11 @@ class PicturesControllerTest  {
     private ObjectMapper objectMapper;
     @Autowired
     private MockMvc mockMvc;
+    @Autowired
+    private PictureClientService clienteService;
+    @Autowired
+    private PictureService pictureService;
+
 
     private static final String INITIALIZE = "/initialize";
     private static final String ALBUMS = "/webclient/albums/2";
@@ -53,6 +62,26 @@ class PicturesControllerTest  {
                 .id(101).userId(1).title("quidem molestiae enim").build());
         PhotoDTO photoDTOResult = objectMapper.readValue(resultOut.getResponse().getContentAsByteArray(), PhotoDTO.class);
         Assertions.assertThat(photoDTOResult).isEqualTo(photoDTO);
+    }
+
+    @Test
+    void test_Web_Client_To_Get_Albums() {
+        AlbumResponseBody[] albums = clienteService.getAlbums();
+        Assertions.assertThat(albums.length).isEqualTo(100);
+    }
+    @Test
+    void test_Service_To_Get_Albums_From_An_API_Call() {
+        AlbumResponseBody albumsById = pictureService.getAlbumsById(2);
+        Assertions.assertThat(albumsById).isEqualTo(AlbumResponseBody.builder().userId(1).id(2).title("sunt qui excepturi placeat culpa").build());
+    }
+    @Test
+    @Transactional
+    void test_Service_To_Get_Albums_With_Photos_From_DataBase() {
+        Album albumByIdFromDataBase = pictureService.getAlbumByIdFromDataBase(101);
+        Assertions.assertThat(albumByIdFromDataBase.getPhotos().size()).isEqualTo(1);
+        Assertions.assertThat(albumByIdFromDataBase.getPhotos().get(0).getId()).isEqualTo(5001);
+        Assertions.assertThat(albumByIdFromDataBase.getId()).isEqualTo(101);
+        Assertions.assertThat(albumByIdFromDataBase.getTitle()).isEqualTo("quidem molestiae enim");
     }
 
 }

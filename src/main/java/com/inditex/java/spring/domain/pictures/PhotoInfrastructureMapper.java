@@ -3,17 +3,16 @@ package com.inditex.java.spring.domain.pictures;
 import com.inditex.java.spring.domain.generic.GenericMapper;
 import com.inditex.java.spring.infrastructure.album.Album;
 import com.inditex.java.spring.infrastructure.album.AlbumRepository;
-import com.inditex.java.spring.infrastructure.photos.Photo;
 import com.inditex.java.spring.infrastructure.dto.PhotoResponseBody;
+import com.inditex.java.spring.infrastructure.photos.Photo;
 import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, unmappedSourcePolicy = ReportingPolicy.IGNORE, unmappedTargetPolicy =
-        ReportingPolicy.IGNORE, uses = {AlbumInfrastructureMapper.class, AlbumRepository.class})
+        ReportingPolicy.IGNORE)
 public abstract class PhotoInfrastructureMapper implements GenericMapper<Photo, PhotoResponseBody> {
     @Autowired
     private AlbumRepository albumRepository;
-
 
     @Mapping(target = "albumId", source = "albumId.id")
     @Mapping(target = "id", source = "id")

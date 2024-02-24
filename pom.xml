@@ -45,6 +45,9 @@
         <sonar.coverage.jacoco.xmlReportPaths>
             ${project.basedir}/../pictures-manager/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
+        <cucumber.version>7.11.1</cucumber.version>
+        <code.coverage.project.folder>${basedir}/../</code.coverage.project.folder>
+        <code.coverage.overall.data.folder>${basedir}/../target</code.coverage.overall.data.folder>
     </properties>
 
     <dependencyManagement>
@@ -83,51 +86,43 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-class-files</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <overwrite>false</overwrite>
+                            <resources>
+                                <resource>
+                                    <directory>../pictures-manager/target/classes</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+                    <!-- Jacoco prepare-agent builds some command-line params without -->
+                    <!-- which jacoco will not instrument. Hence, it is important to add -->
+                    <!-- those command-line params here (${argLine} holds those params) -->
+                    <!--suppress UnresolvedMavenProperty -->
+                    <argLine>${argLine} -Xms256m -Xmx2048m</argLine>
+                    <forkCount>1</forkCount>
+                    <runOrder>random</runOrder>
                     <skipTests>false</skipTests>
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>
-            <!-- INTEGRATION test via 'mvn clean install -P integration-test -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>integration-tests</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                        <configuration>
-                            <skipTests>true</skipTests>
-                            <includes>
-                                <include>*/*Test.java</include>
-                            </includes>
-                            <excludes>
-                                <exclude>**/*Test.java</exclude>
-                            </excludes>
-                            <reuseForks>true</reuseForks>
-                            <!-- When running as a Maven plugin, the JaCoCo agent configuration is prepared by invoking the prepare-agent
-                            or prepare-agent-integration goals, before the actual tests are run. This sets a property named argLine which
-                            points to the JaCoCo agent, later passed as a JVM argument to the test runner -->
-                            <!--suppress UnresolvedMavenProperty -->
-                            <argLine>${itCoverageAgent}</argLine>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- findbugs for code quality -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.4</version>
-            </plugin>
-            <!-- jacoco agent for code coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -147,6 +142,35 @@
                         <phase>pre-integration-test</phase>
                         <configuration>
                             <propertyName>itCoverageAgent</propertyName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>report-aggregate</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report-aggregate</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>check</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>INSTRUCTION</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>23%</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                            <dataFile>${code.coverage.overall.data.folder}/aggregate.exec</dataFile>
                         </configuration>
                     </execution>
                 </executions>
@@ -179,7 +203,69 @@
                             </sources>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/test/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-resource</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-test-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/test/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
                 </executions>
+            </plugin>
+            <!-- INTEGRATION test via 'mvn clean install -P integration-test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>integration-tests</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <skipTests>false</skipTests>
+                            <includes>
+                                <include>*/*Test.java</include>
+                            </includes>
+                            <excludes>
+                                <exclude>**/*Test.java</exclude>
+                            </excludes>
+                            <reuseForks>true</reuseForks>
+                            <!-- When running as a Maven plugin, the JaCoCo agent configuration is prepared by invoking the prepare-agent
+                            or prepare-agent-integration goals, before the actual tests are run. This sets a property named argLine which
+                            points to the JaCoCo agent, later passed as a JVM argument to the test runner -->
+                            <!--suppress UnresolvedMavenProperty -->
+                            <argLine>${itCoverageAgent}</argLine>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- findbugs for code quality -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.4</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -327,6 +413,23 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
             <version>3.0.4</version>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
 </project>

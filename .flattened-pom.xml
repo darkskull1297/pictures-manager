@@ -17,25 +17,28 @@
     </license>
   </licenses>
   <properties>
-    <maven-compiler.version>3.8.1</maven-compiler.version>
+    <code.coverage.overall.data.folder>${basedir}/../target</code.coverage.overall.data.folder>
     <generated-sources-java-path>src/main/java/</generated-sources-java-path>
-    <httpclient.version>5.1</httpclient.version>
     <mapstruct.version>1.5.3.Final</mapstruct.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <skipTests>false</skipTests>
     <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/../pictures-manager/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <jacoco.execution.file>${project.build.directory}/coverage-reports/jacoco-ut.exec</jacoco.execution.file>
-    <jacoco-plugin.version>0.8.8</jacoco-plugin.version>
     <owasp-java-html-sanitizer.version>20220608.1</owasp-java-html-sanitizer.version>
-    <java.version>17</java.version>
     <maven.compiler.source>17</maven.compiler.source>
+    <code.coverage.project.folder>${basedir}/../</code.coverage.project.folder>
     <skipUTs>${skipTests}</skipUTs>
+    <revision>1.0.0-SNAPSHOT</revision>
+    <cucumber.version>7.11.1</cucumber.version>
+    <skipITs>${skipTests}</skipITs>
+    <maven-compiler.version>3.8.1</maven-compiler.version>
+    <httpclient.version>5.1</httpclient.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <skipTests>false</skipTests>
+    <jacoco-plugin.version>0.8.8</jacoco-plugin.version>
+    <java.version>17</java.version>
     <org.owasp.esapi.version>2.5.1.0</org.owasp.esapi.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <revision>1.0.0-SNAPSHOT</revision>
     <generated-sources-path>target/generated-sources/swagger/</generated-sources-path>
     <maven.compiler.target>17</maven.compiler.target>
-    <skipITs>${skipTests}</skipITs>
     <projectlombok.version>1.18.26</projectlombok.version>
   </properties>
   <dependencyManagement>
@@ -104,6 +107,24 @@
       <artifactId>spring-boot-starter-webflux</artifactId>
       <version>3.0.4</version>
     </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-spring</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit-platform-engine</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <pluginManagement>
@@ -151,41 +172,37 @@
     </pluginManagement>
     <plugins>
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <skipTests>false</skipTests>
-          <includes>
-            <include>**/*Test.java</include>
-          </includes>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-failsafe-plugin</artifactId>
+        <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
-            <id>integration-tests</id>
+            <id>copy-class-files</id>
+            <phase>generate-resources</phase>
             <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
+              <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <skipTests>true</skipTests>
-              <includes>
-                <include>*/*Test.java</include>
-              </includes>
-              <excludes>
-                <exclude>**/*Test.java</exclude>
-              </excludes>
-              <reuseForks>true</reuseForks>
-              <argLine>${itCoverageAgent}</argLine>
+              <overwrite>false</overwrite>
+              <resources>
+                <resource>
+                  <directory>../pictures-manager/target/classes</directory>
+                </resource>
+              </resources>
+              <outputDirectory>${project.build.directory}/classes</outputDirectory>
             </configuration>
           </execution>
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.4</version>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>${argLine} -Xms256m -Xmx2048m</argLine>
+          <forkCount>1</forkCount>
+          <runOrder>random</runOrder>
+          <skipTests>false</skipTests>
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -205,6 +222,35 @@
             </goals>
             <configuration>
               <propertyName>itCoverageAgent</propertyName>
+            </configuration>
+          </execution>
+          <execution>
+            <id>report-aggregate</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>report-aggregate</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>check</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <rule>
+                  <element>BUNDLE</element>
+                  <limits>
+                    <limit>
+                      <counter>INSTRUCTION</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>23%</minimum>
+                    </limit>
+                  </limits>
+                </rule>
+              </rules>
+              <dataFile>${code.coverage.overall.data.folder}/aggregate.exec</dataFile>
             </configuration>
           </execution>
         </executions>
@@ -237,7 +283,61 @@
               </sources>
             </configuration>
           </execution>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/test/java</source>
+              </sources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>add-resource</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-test-resource</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>src/test/resources</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>integration-tests</id>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+            <configuration>
+              <skipTests>false</skipTests>
+              <includes>
+                <include>*/*Test.java</include>
+              </includes>
+              <excludes>
+                <exclude>**/*Test.java</exclude>
+              </excludes>
+              <reuseForks>true</reuseForks>
+              <argLine>${itCoverageAgent}</argLine>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.4</version>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
