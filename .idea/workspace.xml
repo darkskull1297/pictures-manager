@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1caeafa2-abb8-4947-852a-0ad6435d67de" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.flattened-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ErrorDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ErrorsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ExceptionHandlerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/PicturesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/AlbumBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/AlbumDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/PhotoBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/dto/PhotoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/mappers/AlbumApplicationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/mappers/PhotoApplicationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/generic/GenericMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/AlbumInfrastructureMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PhotoInfrastructureMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PictureService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PictureServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/album/Album.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/album/AlbumRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/dto/AlbumResponseBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/dto/PhotoResponseBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/exception/ClientServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/generic/GenericEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/photos/Photo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/photos/PhotoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/pictures/PictureClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/pictures/PictureClientServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-local.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/inditex/java/spring/application/PicturesControllerTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2coZdfW5uxJlICXFDamDTTxHepR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Miguel Delgado/pictures-manager/src/main/java/com/inditex/java/spring/infrastructure"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.inditex.java.spring.application.pictures" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Miguel Delgado\pictures-manager\src\main\java\com\inditex\java\spring\infrastructure" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Miguel Delgado\pictures-manager" />
+      <recent name="C:\Users\Miguel Delgado\pictures-manager\src\test" />
+      <recent name="C:\Users\Miguel Delgado\pictures-manager\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.inditex.java.spring.application.pictures" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PicturesControllerTest.getPhotoById">
+    <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="spring.profiles.active" value="local" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.inditex.java.spring.Application" />
+      <module name="pictures-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inditex.java.spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PicturesControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pictures-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inditex.java.spring.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.inditex.java.spring.application" />
+      <option name="MAIN_CLASS_NAME" value="com.inditex.java.spring.application.PicturesControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PicturesControllerTest.getAlbums" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pictures-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inditex.java.spring.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.inditex.java.spring.application" />
+      <option name="MAIN_CLASS_NAME" value="com.inditex.java.spring.application.PicturesControllerTest" />
+      <option name="METHOD_NAME" value="getAlbums" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PicturesControllerTest.getPhotoById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pictures-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inditex.java.spring.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.inditex.java.spring.application" />
+      <option name="MAIN_CLASS_NAME" value="com.inditex.java.spring.application.PicturesControllerTest" />
+      <option name="METHOD_NAME" value="getPhotoById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PicturesControllerTest.initilizeDataBase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pictures-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inditex.java.spring.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.inditex.java.spring.application" />
+      <option name="MAIN_CLASS_NAME" value="com.inditex.java.spring.application.PicturesControllerTest" />
+      <option name="METHOD_NAME" value="initilizeDataBase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="JUnit.PicturesControllerTest" />
+      <item itemvalue="JUnit.PicturesControllerTest.getAlbums" />
+      <item itemvalue="JUnit.PicturesControllerTest.getPhotoById" />
+      <item itemvalue="JUnit.PicturesControllerTest.initilizeDataBase" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PicturesControllerTest.getPhotoById" />
+        <item itemvalue="JUnit.PicturesControllerTest.getAlbums" />
+        <item itemvalue="JUnit.PicturesControllerTest" />
+        <item itemvalue="JUnit.PicturesControllerTest.initilizeDataBase" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1caeafa2-abb8-4947-852a-0ad6435d67de" name="Changes" comment="" />
+      <created>1708779982731</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708779982731</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/PicturesController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PictureServiceImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/inditex/java/spring/application/pictures/ExceptionHandlerController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
