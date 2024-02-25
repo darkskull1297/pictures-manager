@@ -7,6 +7,7 @@
     <list default="true" id="1caeafa2-abb8-4947-852a-0ad6435d67de" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.flattened-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
       <recent name="com.inditex.java.spring.application.pictures" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.All Features in: test">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.inditex.java.spring.Application" />
       <module name="pictures-manager" />
