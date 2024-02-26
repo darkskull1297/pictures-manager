@@ -30,7 +30,7 @@ Los test unitarios se encuentran en la carpeta Test del proyecto, hay 3 que se e
 
 6.- test_Service_To_Get_Albums_With_Photos_From_DataBase(): Se encargade testear la funcion que recupera de la BBDD la informacion de los album enriquecidos con sus fotos.
 
-El test de integración esta en la carpeta Test del proyecto, en dicho test, se ejecutan basicamante 2 de los test unitarios realizados arriba, es decir, primero de ejecutala funcion de inicializar la base de datos y luego la funcion de obtener una foto de acuerdo a un deteminado id. Fue elaborado con Gherkins y cucumber ya que a mi parecer puede ser muy util para los QA poder crear "Escenarios" de prueba que permitan seguir paso a paso la funcionalidad entera de un proceso que deba ejecutar nuestro microservicio.
+El test de integración esta en la carpeta Test del proyecto, en dicho test, se ejecutan basicamante 2 de los test unitarios realizados arriba, es decir, primero de ejecutala funcion de inicializar la base de datos y luego la funcion de obtener una foto de acuerdo a un deteminado id. Fue elaborado con Gherkins y cucumber ya que a mi parecer puede ser muy util para los QA poder crear "Escenarios" de prueba que permitan seguir paso a paso la funcionalidad entera de un proceso que deba ejecutar nuestro microservicio. Dicho test se ejecuta desde el archivo [getPhotoById.feature](src%2Ftest%2Fresources%2FgetPhotoById.feature) ubicado en la carpeta resources de la carpeta Test.
 
 To run tests, run the following command
 
