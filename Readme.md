@@ -3,7 +3,7 @@
 
 Este microservicio sera utilizado para la gestion de albunes y sus respectivas fotos.
 
-Se utilizó sando Java 17, Spring Boot 3, JPA, H2, JUnit 5, Cucumber y Gherkins con sus respectivos plugings como Jacoco y lombok para la creación de un API con 3 Endpoints descritos en la seccion API Reference.
+Se utilizó Java 17, Spring Boot 3, JPA, H2, JUnit 5, Cucumber y Gherkins con sus respectivos plugings como Jacoco y lombok para la creación de un API con 3 Endpoints descritos en la seccion API Reference.
 Ademas fue utilizado Domain Driven Design (DDD) para la separación de los modulos del micro servicio contando de la capa de applicacion, encargada de alojar lo referente a acceso por red al micro servicio, como los endpoints y los API contracts (Estos ultimos que por falta de tiempo no los realicé, pero se pudo iniciar aplicando API First tambien). Continuada por la capa Domain, encargada de contener todos los Model y logica de negocios.
 Para finalizar con la capa de infraestructura encargada de contener los repositorios, las entities y los web client para conectar con otros microservicios.
 A su vex, fue agregada una cuarta capa encargada de mantener separados los test de integracion del micro, esto con la finalidad de no agregar carga extra a los modulos, y para tener la posiblidad de testear cualquiera de los 3 modulos mencionados anteriormente, por separado si asi lo requiere.

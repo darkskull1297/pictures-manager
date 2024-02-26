@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1caeafa2-abb8-4947-852a-0ad6435d67de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PhotoInfrastructureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/domain/pictures/PhotoInfrastructureMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/dto/PhotoResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inditex/java/spring/infrastructure/dto/PhotoResponseBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
