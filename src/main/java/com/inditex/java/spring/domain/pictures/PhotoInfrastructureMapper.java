@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
         ReportingPolicy.IGNORE)
 public abstract class PhotoInfrastructureMapper implements GenericMapper<Photo, PhotoResponseBody> {
     @Autowired
-    private AlbumRepository albumRepository;
+    protected AlbumRepository albumRepository;
 
     @Mapping(target = "albumId", source = "albumId.id")
     @Mapping(target = "id", source = "id")
@@ -22,16 +22,11 @@ public abstract class PhotoInfrastructureMapper implements GenericMapper<Photo, 
     @Override
     public abstract PhotoResponseBody toDTO(Photo photo);
 
-    @Mapping(target = "albumId", qualifiedByName="intToAlbum", source = "albumId")
+    @Mapping(target = "albumId", expression = "java(albumRepository.getReferenceById(String.valueOf(photoResponseBody.albumId)))")
     @Mapping(target = "id", source = "id")
     @Mapping(target = "title", source = "title")
     @Mapping(target = "url", source = "url")
     @Mapping(target = "thumbnailUrl", source = "thumbnailUrl")
     @Override
     public abstract Photo toEntity(PhotoResponseBody photoResponseBody);
-
-    @Named("intToAlbum")
-    public Album intToAlbum(int albumId) {
-        return albumRepository.getReferenceById(String.valueOf(albumId));
-    }
 }

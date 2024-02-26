@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PhotoResponseBody {
     public int id;
-    private int albumId;
+    public int albumId;
     private String title;
     private String url;
 
